@@ -80,9 +80,9 @@ public class TemperatureConverterActivityTests extends
 
     @SmallTest
     public void testJustification() {
-        /* TODO 3: 숫자는 오른쪽 정렬로 되어야 하고 수직 중앙 정렬되어야 함
-         * Hint:  EditText.getGravity()
-         */
+        final int expected = Gravity.RIGHT | Gravity.CENTER_VERTICAL;
+        assertEquals(expected, mCelsius.getGravity());
+        assertEquals(expected, mFahrenheit.getGravity());
     }
 
     @SmallTest
