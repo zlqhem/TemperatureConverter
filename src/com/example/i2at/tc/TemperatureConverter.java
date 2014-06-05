@@ -8,6 +8,12 @@ package com.example.i2at.tc;
  *
  */
 public class TemperatureConverter {
+	public static final double ABSOLUTE_ZERO_C = -273.15d;
+	public static final double ABSOLUTE_ZERO_F = -459.67d;
+	
+	public static final String ERROR_MESSAGE_BELOW_ZERO_FMT =
+	    "Invalid temperature: %.2f%c below absolute zero";
+	
 	private TemperatureConverter() {
 		// do nothing
 	}

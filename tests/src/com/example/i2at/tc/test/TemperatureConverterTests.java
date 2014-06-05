@@ -7,6 +7,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 
+import com.example.i2at.tc.InvalidTemperatureException;
 import com.example.i2at.tc.TemperatureConverter;
 
 import junit.framework.TestCase;
@@ -76,11 +77,23 @@ public class TemperatureConverterTests extends TestCase {
 	}
 	
 	public final void testExceptionForLessThanAbsoluteZeroF() {
-		/* TODO 7: 값에 오류가 발생했을 때 동일한 field 에 표현되어야 함 */
+		try {
+			TemperatureConverter.fahrenheitToCelsius(TemperatureConverter.ABSOLUTE_ZERO_F-1);
+			fail("Less than absolute zero F not detected");
+		}
+		catch (InvalidTemperatureException ex) {
+			// do nothing
+		}
 	}
 	
 	public final void testExceptionForLessThanAbsoluteZeroC() {
-		/* TODO 7: 값에 오류가 발생했을 때 동일한 field 에 표현되어야 함 */		
+		try {
+			TemperatureConverter.celsiusToFahrenheit(TemperatureConverter.ABSOLUTE_ZERO_C-1);
+			fail("Less than absolute zero C not detected");
+		}
+		catch (InvalidTemperatureException ex) {
+			// do nothing
+		}		
 	}
 	
 	public final void testPrivateConstructor() throws SecurityException, NoSuchMethodException,
