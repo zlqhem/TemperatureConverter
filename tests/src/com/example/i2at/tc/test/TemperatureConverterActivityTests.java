@@ -67,33 +67,36 @@ public class TemperatureConverterActivityTests extends
 
     @SmallTest
     public void testFieldsOnScreen() {
-        final View origin =
-                mActivity.getWindow().getDecorView();
-        ViewAsserts.assertOnScreen(origin, mCelsius);
-        ViewAsserts.assertOnScreen(origin, mFahrenheit);
-    }
-
-    @SmallTest
-    public void testAlignment() {
-        ViewAsserts.assertRightAligned(mCelsius, mFahrenheit);
-        ViewAsserts.assertLeftAligned(mCelsius, mFahrenheit);
+    	final View origin = mActivity.getWindow().getDecorView();
+    	ViewAsserts.assertOnScreen(origin, mCelsius);
+    	ViewAsserts.assertOnScreen(origin, mFahrenheit);
+        /* TODO #2. 섭씨온도를 입력 받는 field 와 화씨온도를 입력받는 field 가 하나씩 존재함
+         * Hint: assertOnScreen  
+         */
     }
 
     @SmallTest
     public void testFieldsShouldStartEmpty() {
-        assertTrue("".equals(mCelsius.getText().toString()));
-        assertTrue("".equals(mFahrenheit.getText().toString()));
+    	/* TODO #1. 최소 실행 시 각 field 는 비워져 있어야 함
+    	 * 	 field : mCelsius, mFahrenheit
+    	 */
     }
 
     @SmallTest
     public void testJustification() {
-        final int expected = Gravity.RIGHT | Gravity.CENTER_VERTICAL;
-        assertEquals(expected, mCelsius.getGravity());
-        assertEquals(expected, mFahrenheit.getGravity());
+        /* TODO 3: 숫자는 오른쪽 정렬로 되어야 하고 수직 중앙 정렬되어야 함
+         * Hint:  EditText.getGravity()
+         */
     }
 
+    @SmallTest
+    public void testVirtualKeyboardSpaceReserved() {
+        /* TODO 4: 키보드가 올아올 예비 공간을 Application 상 에서 미리 확보해야 함. */
+    }
+    
     @UiThreadTest
     public void testFahrenheitToCelsiusConversion() {
+    	/* TODO 5-1: 하나의 field 에 값을 입력하면, 다른  field 에 해당 값이 실시간으로 변환되어야 함 
         mCelsius.clear();
         mFahrenheit.clear();
         final double f = 32.5;
@@ -102,14 +105,18 @@ public class TemperatureConverterActivityTests extends
         assertEquals(f, mFahrenheit.getNumber());
         assertTrue(mCelsius.requestFocus());
         assertTrue(mCelsius.isFocused());
-        final double expected = TemperatureConverter.fahrenheitToCelsius(f);
-        final double actual = mCelsius.getNumber();
+        
+        final double expected; // COMEPLETE 
+        final double actual; // COMPLETE
         final double delta = Math.abs(expected - actual);
         assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual, delta < 0.005);
+        */
+    	assertTrue(true);
     }
 
     @UiThreadTest
     public void testCelsiusToFahrenheitConversion() {
+    	/* TODO 5-2: 하나의 field 에 값을 입력하면, 다른  field 에 해당 값이 실시간으로 변환되어야 함
         mCelsius.clear();
         mFahrenheit.clear();
         final double c = 100;
@@ -118,13 +125,16 @@ public class TemperatureConverterActivityTests extends
         assertEquals(c, mCelsius.getNumber());
         assertTrue(mFahrenheit.requestFocus());
         assertTrue(mFahrenheit.isFocused());
-        final double expected = TemperatureConverter.celsiusToFahrenheit(c);
-        final double actual = mFahrenheit.getNumber();
+        final double expected; // COMEPLETE
+        final double actual; // COMPLETE
         final double delta = Math.abs(expected - actual);
         assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual, delta < 0.005);
+        */
+    	assertTrue(true);
     }
 
     public void testFahrenheitToCelsiusConversion_text() throws Throwable {
+    	/*
         final double f = 32.5;
         runTestOnUiThread(new Runnable() {
 
@@ -142,9 +152,11 @@ public class TemperatureConverterActivityTests extends
         final double actual = mCelsius.getNumber();
         final double delta = Math.abs(expected - actual);
         assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual, delta < 0.005);
+        */
     }
 
     public void testCelsiusToFahrenheitConversion_text() throws Throwable {
+    	/*
         final double c = 100;
         runTestOnUiThread(new Runnable() {
 
@@ -184,6 +196,7 @@ public class TemperatureConverterActivityTests extends
                         delta < 0.005);
             }
         });
+        */
     }
 
     @UiThreadTest
@@ -199,7 +212,8 @@ public class TemperatureConverterActivityTests extends
         mFahrenheit.setText(MINUS_SIGN);
         assertTrue(MINUS_SIGN.equals(mFahrenheit.getText().toString()));
     }
-
+    
+    @Suppress
     public void testOnOptionsItemSelected() {
         final Instrumentation i = getInstrumentation();
         i.sendKeyDownUpSync(KeyEvent.KEYCODE_MENU);

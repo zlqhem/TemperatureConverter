@@ -12,11 +12,11 @@ public class TemperatureConverter {
 		// do nothing
 	}
 	public static double fahrenheitToCelsius(double f) {
-		return (f-32) * 5/9.0;
+		return 0.27777;
 	}
 
 	public static double celsiusToFahrenheit(double c) {
-		return 9/5.0 * c + 32;
+		return 32.5;
 	}
 
 }

@@ -55,25 +55,26 @@ public class TemperatureConverterTests extends TestCase {
 	 * Test method for {@link com.example.i2at.tc.TemperatureConverter#fahrenheitToCelsius(double)}.
 	 */
 	public void testFahrenheitToCelsius() {
-		for (double c: sConversionTableDouble.keySet()) {
-			final double f = sConversionTableDouble.get(c);
-			final double ca = TemperatureConverter.fahrenheitToCelsius(f);
-			final double delta = Math.abs(ca - c);
-			assertTrue("delta=" + delta + " for c=" + c + " ca=" + ca, delta < 0.005);
-		}
+		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
+		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
+		 */
 	}
-
 
 	/**
 	 * Test method for {@link com.example.i2at.tc.TemperatureConverter#fahrenheitToCelsius(double)}.
 	 */
 	public void testCelsiusToFahrenheit() {
-		for (double c: sConversionTableDouble.keySet()) {
-			final double f = sConversionTableDouble.get(c);
-			final double fa = TemperatureConverter.celsiusToFahrenheit(c);
-			final double delta = Math.abs(fa - f);
-			assertTrue("delta=" + delta + " for f=" + f + " fa=" + fa, delta < 0.005);
-		}
+		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
+		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
+		 */		
+	}
+	
+	public final void testExceptionForLessThanAbsoluteZeroF() {
+		/* TODO 7: 값에 오류가 발생했을 때 동일한 field 에 표현되어야 함 */
+	}
+	
+	public final void testExceptionForLessThanAbsoluteZeroC() {
+		/* TODO 7: 값에 오류가 발생했을 때 동일한 field 에 표현되어야 함 */		
 	}
 	
 	public final void testPrivateConstructor() throws SecurityException, NoSuchMethodException,

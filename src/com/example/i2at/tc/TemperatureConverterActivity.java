@@ -80,12 +80,12 @@ public class TemperatureConverterActivity extends Activity {
                 return;
             }
             try {
+            	double parsedNumber = Double.parseDouble(str);
                 android.util.Log.v(TAG, "converting temp=" + str + "{"
-                        + Double.parseDouble(str) + "}");
-                final double result = convert(Double.parseDouble(str));
-                android.util.Log.v("TemperatureChangeWatcher", "result=" + result);
-                // final String resutlStr = String.format("%.2f", result);
-                mDest.setNumber(result);
+                        + parsedNumber + "}");
+                // TODO: complete this method.
+                // Hint: use abstract method 'convert' and EditNumber.setNumber
+                
             } catch (NumberFormatException e) {
                 // WARNING:
                 // this is thrown while a number is entered
@@ -129,10 +129,10 @@ public class TemperatureConverterActivity extends Activity {
             final double c = mCelsius.getNumber();
             
             if (dest == mCelsius && ! Double.isNaN(f)) {
-                mCelsius.setNumber(TemperatureConverter.fahrenheitToCelsius(f));
+            	// TODO: complete this method. Use setNumber of EditNumber method
             }
             else if (dest == mFahrenheit && !Double.isNaN(c)) {
-                mFahrenheit.setNumber(TemperatureConverter.celsiusToFahrenheit(c));
+            	// TODO: complete this method. Use setNumber of EditNumber method
             }
         }
     };
