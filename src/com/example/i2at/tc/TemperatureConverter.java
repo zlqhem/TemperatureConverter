@@ -18,10 +18,18 @@ public class TemperatureConverter {
 		// do nothing
 	}
 	public static double fahrenheitToCelsius(double f) {
+		if (f < ABSOLUTE_ZERO_F) {
+		    throw new InvalidTemperatureException(
+		         String.format(ERROR_MESSAGE_BELOW_ZERO_FMT, f, 'F'));
+		}		
 		return (f-32) * 5/9.0;
 	}
 
 	public static double celsiusToFahrenheit(double c) {
+		if (c < ABSOLUTE_ZERO_C) {
+			throw new InvalidTemperatureException(
+					String.format(ERROR_MESSAGE_BELOW_ZERO_FMT, c, 'C'));
+		}		
 		return 9/5.0 * c + 32;
 	}
 
