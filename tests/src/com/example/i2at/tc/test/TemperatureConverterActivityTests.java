@@ -87,7 +87,9 @@ public class TemperatureConverterActivityTests extends
 
     @SmallTest
     public void testVirtualKeyboardSpaceReserved() {
-        /* TODO 4: 키보드가 올아올 예비 공간을 Application 상 에서 미리 확보해야 함. */
+        final int expected = 280;
+        final int actual = mFahrenheit.getBottom();
+        assertTrue(actual <= expected);    
     }
     
     @UiThreadTest
