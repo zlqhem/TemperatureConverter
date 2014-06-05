@@ -77,8 +77,8 @@ public class TemperatureConverterActivityTests extends
 
     @SmallTest
     public void testFieldsShouldStartEmpty() {
-        assertTrue("".equals(mCelsius.getText().toString()));
-        assertTrue("".equals(mFahrenheit.getText().toString()));    	
+        assertTrue(mCelsius.getText().toString(), "".equals(mCelsius.getText().toString()));
+        assertTrue(mFahrenheit.getText().toString(), "".equals(mFahrenheit.getText().toString()));    	
     }
 
     @SmallTest
