@@ -70,7 +70,7 @@ public class EditNumberTests extends AndroidTestCase {
 	public final void testSetNumber() {
 		final double d = 123.456;
 		mEditNumber.setNumber(d);
-		final String expected = "123.45";
+		final String expected = "123.46";
 		final String actual = mEditNumber.getText().toString();
 		assertEquals(expected, actual);
 	}
