@@ -70,9 +70,6 @@ public class TemperatureConverterActivityTests extends
     	final View origin = mActivity.getWindow().getDecorView();
     	ViewAsserts.assertOnScreen(origin, mCelsius);
     	ViewAsserts.assertOnScreen(origin, mFahrenheit);
-        /* TODO #2. 섭씨온도를 입력 받는 field 와 화씨온도를 입력받는 field 가 하나씩 존재함
-         * Hint: assertOnScreen  
-         */
     }
 
     @SmallTest
